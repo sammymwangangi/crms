@@ -46,9 +46,9 @@
               <div class="card-body-icon">
                 <i class="fa fa-fw fa-shopping-cart"></i>
               </div>
-              <div class="mr-5">123 Products!</div>
+              <div class="mr-5">{{$products_count}} Products!</div>
             </div>
-            <a class="card-footer text-white clearfix small z-1" href="{{url('/products')}}">
+            <a class="card-footer text-white clearfix small z-1" href="{{url('main/products')}}">
               <span class="float-left">View Details</span>
               <span class="float-right">
                 <i class="fa fa-angle-right"></i>

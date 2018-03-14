@@ -72,7 +72,7 @@
 
                     <strong>Description:</strong>
 
-                    <textarea class="form-control" style="height:150px" name="description" placeholder="Detail">{{ $product->detail }}</textarea>
+                    <textarea class="form-control" style="height:150px" name="description" placeholder="Detail">{{ $product->description }}</textarea>
 
                 </div>
 
@@ -84,9 +84,8 @@
 
                     <strong>Image:</strong>
 
-                    <div class="custom-file">
-                      <input type="file" name="image" value="{{ $product->image }}" class="custom-file-input" id="customFileLang" lang="es">
-                      <label class="custom-file-label" for="customFileLang">Seleccionar Archivo</label>
+                    <div class="form-group col-md-4">
+                        <input type="file" name="image" value="{{ $product->image }}">    
                     </div>
 
                 </div>

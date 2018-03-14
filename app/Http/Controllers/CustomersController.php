@@ -59,7 +59,8 @@ class CustomersController extends Controller
         $customer->address = $request->input('address');
         $customer->save();
 
-        return redirect('admin/customers')->with('success', 'Customer created');
+        return redirect('main/customers')
+                ->with('success', 'Customer created');
     
     }
 
@@ -83,7 +84,7 @@ class CustomersController extends Controller
     public function edit($id)
     {
         $customer = Customer::find($id);
-        return view('admin.customers.edit')->with('customer', $customer);
+        return view('main.customers.edit')->with('customer', $customer);
     }
 
     /**
@@ -114,7 +115,7 @@ class CustomersController extends Controller
         $customer->address = $request->input('address');
         $customer->save();
 
-        return redirect('admin/customers')->with('success', 'Customer Updated');
+        return redirect('main/customers')->with('success', 'Customer Updated');
     }
 
     /**
@@ -128,6 +129,6 @@ class CustomersController extends Controller
         $customer = Customer::find($id);
         $customer->delete();
 
-        return redirect('admin/customers')->with('success', 'Customer Removed');
+        return redirect('main/customers')->with('success', 'Customer Removed');
     }
 }

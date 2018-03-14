@@ -43,7 +43,7 @@
     @endif
 
 
-    <form action="{{ route('customers.store') }}" method="POST">
+    <form method="post" action="{{ action('CustomersController@store')}} ">
 
         @csrf
 

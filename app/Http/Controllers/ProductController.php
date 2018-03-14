@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Product;
 
 class ProductController extends Controller
 {
@@ -13,7 +14,7 @@ class ProductController extends Controller
         $products = Product::latest()->paginate(5);
 
 
-        return view('products.index',compact('products'))
+        return view('main.products.index',compact('products'))
 
             ->with('i', (request()->input('page', 1) - 1) * 5);
 
@@ -34,7 +35,7 @@ class ProductController extends Controller
 
     {
 
-        return view('products.create');
+        return view('main.products.create');
 
     }
 
@@ -65,13 +66,19 @@ class ProductController extends Controller
 
         ]);
 
+        if($request->hasfile('image'))
+         {
+            $file = $request->file('image');
+            $name=time().$file->getClientOriginalName();
+            $file->move(public_path().'/images/', $name);
+         }
+
 
         Product::create($request->all());
 
 
-        return redirect()->route('products.index')
-
-                        ->with('success','Product created successfully.');
+        return redirect('main/products')
+                ->with('success', 'Product Created Successfully');
 
     }
 
@@ -92,7 +99,7 @@ class ProductController extends Controller
 
     {
 
-        return view('products.show',compact('product'));
+        return view('main.products.show',compact('product'));
 
     }
 
@@ -113,7 +120,7 @@ class ProductController extends Controller
 
     {
 
-        return view('products.edit',compact('product'));
+        return view('main.products.edit',compact('product'));
 
     }
 
@@ -150,9 +157,8 @@ class ProductController extends Controller
         $product->update($request->all());
 
 
-        return redirect()->route('products.index')
-
-                        ->with('success','Product updated successfully');
+        return redirect('main/products')
+                ->with('success', 'Product Updated Successfully');
 
     }
 
@@ -176,9 +182,8 @@ class ProductController extends Controller
         $product->delete();
 
 
-        return redirect()->route('products.index')
-
-                        ->with('success','Product deleted successfully');
+        return redirect('main/products')
+                ->with('success', 'Product Deleted Successfully');
 
     }
 }

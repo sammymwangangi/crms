@@ -82,9 +82,8 @@
 
                     <strong>Image:</strong>
 
-                    <div class="custom-file">
-                      <input type="file" name="image" class="custom-file-input" id="customFileLang" lang="es">
-                      <label class="custom-file-label" for="customFileLang">Seleccionar Archivo</label>
+                    <div class="form-group col-md-4">
+                        <input type="file" name="image">    
                     </div>
 
                 </div>
