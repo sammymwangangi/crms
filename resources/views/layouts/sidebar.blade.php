@@ -1,8 +1,14 @@
     <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-          <a class="nav-link" href="{{('/')}}">
+          <a class="nav-link" href="{{('/main')}}">
             <i class="fa fa-fw fa-dashboard"></i>
             <span class="nav-link-text">Dashboard</span>
+          </a>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Staff">
+          <a class="nav-link" href="{{url('main/staff')}}">
+            <i class="fa fa-fw fa-group"></i>
+            <span class="nav-link-text">Staff</span>
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Customers">
@@ -13,7 +19,7 @@
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Products">
           <a class="nav-link" href="{{url('main/products')}}">
-            <i class="fa fa-fw fa-area-chart"></i>
+            <i class="fa fa-fw fa-shopping-bag"></i>
             <span class="nav-link-text">Products</span>
           </a>
         </li>
@@ -23,10 +29,10 @@
             <span class="nav-link-text">Transactions</span>
           </a>
         </li>
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
-          <a class="nav-link" href="{{('/')}}">
-            <i class="fa fa-fw fa-link"></i>
-            <span class="nav-link-text">Home</span>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Profile">
+          <a class="nav-link" href="{{('main/profile')}}">
+            <i class="fa fa-fw fa-address-card-o"></i>
+            <span class="nav-link-text">Profile</span>
           </a>
         </li>
       </ul>
