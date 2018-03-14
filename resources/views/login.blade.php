@@ -43,9 +43,6 @@
           </div>
           <button type="submit" class="btn btn-primary btn-block">Login</button>
         </form>
-        <div class="text-center">
-          <a class="d-block small mt-3" href="{{url('/register')}}">Register an Account</a>
-        </div>
       </div>
     </div>
   </div>
