@@ -1,5 +1,7 @@
 <?php
 
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,6 +24,9 @@ Route::post('/logout', 'HomeController@postLogout');
 Route::prefix('main')->middleware('auth')->group(function(){
 	Route::get('/','DashboardController@index');
 
+	Route::resource('customers', 'CustomersController');
+
+	Route::resource('products','ProductController');
 
 });
 

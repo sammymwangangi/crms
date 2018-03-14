@@ -1,19 +1,21 @@
 @extends('layouts.master')
+
+
 @section('content')
-<section class="content">
+
     <div class="row">
 
         <div class="col-lg-12 margin-tb">
 
             <div class="pull-left">
 
-                <h2>Add New Customer</h2>
+                <h2>Edit Product</h2>
 
             </div>
 
             <div class="pull-right">
 
-                <a class="btn btn-primary" href="{{ route('customers.index') }}"> Back</a>
+                <a class="btn btn-primary" href="{{ route('products.index') }}"> Back</a>
 
             </div>
 
@@ -43,9 +45,11 @@
     @endif
 
 
-    <form action="{{ route('customers.store') }}" method="POST">
+    <form action="{{ route('products.update',$product->id) }}" method="POST">
 
         @csrf
+
+        @method('PUT')
 
 
          <div class="row">
@@ -56,7 +60,7 @@
 
                     <strong>Name:</strong>
 
-                    <input type="text" name="name" class="form-control" placeholder="Name">
+                    <input type="text" name="name" value="{{ $product->name }}" class="form-control" placeholder="Name">
 
                 </div>
 
@@ -66,21 +70,9 @@
 
                 <div class="form-group">
 
-                    <strong>Email:</strong>
+                    <strong>Description:</strong>
 
-                    <input type="text" name="email" class="form-control" placeholder="Email">
-
-                </div>
-
-            </div>
-
-            <div class="col-xs-12 col-sm-12 col-md-12">
-
-                <div class="form-group">
-
-                    <strong>Phone:</strong>
-
-                   <input type="text" name="phone" placeholder="Phone">
+                    <textarea class="form-control" style="height:150px" name="description" placeholder="Detail">{{ $product->detail }}</textarea>
 
                 </div>
 
@@ -90,17 +82,20 @@
 
                 <div class="form-group">
 
-                    <strong>Address:</strong>
+                    <strong>Image:</strong>
 
-                    <input type="text" name="address" placeholder="Address">
+                    <div class="custom-file">
+                      <input type="file" name="image" value="{{ $product->image }}" class="custom-file-input" id="customFileLang" lang="es">
+                      <label class="custom-file-label" for="customFileLang">Seleccionar Archivo</label>
+                    </div>
+
                 </div>
 
             </div>
-
 
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">
 
-                    <button type="submit" class="btn btn-primary">Submit</button>
+              <button type="submit" class="btn btn-primary">Submit</button>
 
             </div>
 
@@ -109,5 +104,5 @@
 
     </form>
 
-@endsection
 
+@endsection
