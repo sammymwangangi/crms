@@ -57,7 +57,7 @@
 
                 <strong>Image:</strong>
 
-                {{ $product->image }}
+                <img style="width: 150px; height: 90px;" class="img-responsive" src="/storage/images/{{$product->image}}">
 
             </div>
 
