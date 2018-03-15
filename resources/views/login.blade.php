@@ -11,7 +11,11 @@
 @include('layouts.styles')
 </head>
 
-<body class="bg-secondary">
+<body style="background: url('images/4.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;">
   <div class="container">
     <div class="card card-login mx-auto mt-5">
       <div class="card-header">Login</div>
