@@ -9,6 +9,7 @@
     <!-- Custom scripts for this page-->
     <script src="{{asset('js/sb-admin-datatables.min.js')}}"></script>
         <!-- Toastr-->
+    <script src="{{asset('js/bootstrap-datepicker.min.js')}}"></script>
     <script src="{{asset('js/toastr.min.js')}}"></script>
     <script src="{{asset('js/gijgo.min.js')}}"></script>
     <script>
@@ -17,6 +18,14 @@
         });
     </script>
     <script>
+      $('#datepicker').datepicker({
+            keyboardNavigation: false,
+            forceParse: false,
+            todayHighlight: true,
+            locale: 'no',
+            format: 'yyyy-mm-dd',
+            autoclose: true
+        });
   @if(Session::has('success'))
   toastr.success("{{ Session::get('success') }}");
   @endif

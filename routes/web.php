@@ -33,4 +33,8 @@ Route::prefix('main')->middleware('auth')->group(function(){
 	
 
 });
+Route::prefix('transaction')->middleware('auth')->group(function(){
+	Route::get('/','TransactionController@index');
+
+});
 

@@ -64,7 +64,12 @@
                 <div class="form-group">
 
                     <strong>Name:</strong>
-
+    <div class="input-group">
+    <input type="text" class="form-control" id="datepicker" placeholder="Y-m-d" placeholder="Username">
+     <div class="input-group-prepend">
+      <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+    </div>
+  </div>
                     <input type="text" name="name" class="form-control" placeholder="Name">
 
                 </div>
