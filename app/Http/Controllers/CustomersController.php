@@ -15,7 +15,7 @@ class CustomersController extends Controller
      */
     public function index()
     {
-        $customers = DB::table('customers')->simplePaginate(15);
+        $customers = DB::table('customers')->get();
         return view('main.customers.index', ['customers' => $customers]);
     }
 
@@ -49,6 +49,8 @@ class CustomersController extends Controller
          $user->name=$request->name;
          $user->email=$request->email;
          $user->password=bcrypt('123456');
+         $user->user_level=3;
+         $user->save();
 
         // Create customer
         $customer = new Customer;
@@ -97,7 +99,6 @@ class CustomersController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'user_id' => 'required',
             'name' => 'required',
             'email' => 'required',
             'phone' => 'required',
@@ -108,7 +109,6 @@ class CustomersController extends Controller
 
         // Update Post
         $customer = Customer::find($id);
-        $customer->user_id = $request->input('user_id');
         $customer->name = $request->input('name');
         $customer->email = $request->input('email');
         $customer->phone = $request->input('phone');

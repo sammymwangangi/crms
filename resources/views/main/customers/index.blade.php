@@ -1,4 +1,10 @@
 @extends('layouts.master')
+@section('crumbs')
+ <li class="breadcrumb-item">
+          <a href="#">Dashboard</a>
+        </li>
+        <li class="breadcrumb-item active">Customers</li>
+@endsection
 @section('content')
 
 
@@ -16,11 +22,10 @@
 
 <div class="container">
 	<div class="table-responsive">
-    <table class="table table-striped table-bordered table-hover">
+    <table class="table table-striped table-bordered table-hover" id="dataTable" width="100%" cellspacing="0">
         <thead>
             <tr>
-              <td>ID</td>
-              <td>USER_ID</td>
+              <td>#</td>
               <td>NAME</td>
               <td>EMAIL</td>
               <td>PHONE</td>
@@ -30,10 +35,9 @@
         </thead>
         <tbody>
         	@if(count($customers) > 0)
-            @foreach($customers as $customer)
+            @foreach($customers as $index=>$customer)
             <tr>
-                <td>{{$customer->id}}</td>
-                <td>{{$customer->user_id}}</td>
+                <td>{{$index+1}}</td>
                 <td>{{$customer->name}}</td>
                 <td>{{$customer->email}}</td>
                 <td>{{$customer->phone}}</td>
@@ -48,7 +52,6 @@
                 </td>
             </tr>
             @endforeach
-            {{ $customers->links() }}
             @else
 		<p style="color: maroon;">No customers found!!!</p>
 

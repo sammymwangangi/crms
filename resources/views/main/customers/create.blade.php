@@ -1,4 +1,13 @@
 @extends('layouts.master')
+@section('crumbs')
+ <li class="breadcrumb-item">
+          <a href="{{url('/main')}}">Dashboard</a>
+        </li>
+        <li class="breadcrumb-item">
+          <a href="{{url('/main/customers')}}">Customers</a>
+        </li>
+        <li class="breadcrumb-item active">Create Customers</li>
+@endsection
 @section('content')
 <section class="content">
     <div class="row">
@@ -43,7 +52,7 @@
     @endif
 
 
-    <form method="post" action="{{ action('CustomersController@store')}} ">
+    <form method="post" action="{{ route('customers.store')}} ">
 
         @csrf
 
@@ -68,7 +77,7 @@
 
                     <strong>Email:</strong>
 
-                    <input type="text" name="email" class="form-control" placeholder="Email">
+                    <input type="email" name="email" class="form-control" placeholder="Email">
 
                 </div>
 
@@ -80,7 +89,7 @@
 
                     <strong>Phone:</strong>
 
-                   <input type="text" name="phone" placeholder="Phone">
+                   <input type="text" name="phone" class="form-control" placeholder="Phone">
 
                 </div>
 
@@ -92,7 +101,7 @@
 
                     <strong>Address:</strong>
 
-                    <input type="text" name="address" placeholder="Address">
+                    <input type="text" name="address" class="form-control" placeholder="Address">
                 </div>
 
             </div>
