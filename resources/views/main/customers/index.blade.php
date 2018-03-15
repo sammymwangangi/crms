@@ -14,7 +14,7 @@
                 <h1>Customers List</h1>
             </div>
             <div class="pull-right">
-                <a class="btn btn-success" href="{{url('main/customers/create')}}"> Create New Customer</a>
+                <a class="btn btn-primary" href="{{url('main/customers/create')}}"> Create New Customer</a>
             </div>
         </div>
     </div>
@@ -30,7 +30,7 @@
               <td>EMAIL</td>
               <td>PHONE</td>
               <td>ADDRESS</td>
-              <td colspan="2">Action</td>
+              <td >Action</td>
             </tr>
         </thead>
         <tbody>
@@ -42,13 +42,17 @@
                 <td>{{$customer->email}}</td>
                 <td>{{$customer->phone}}</td>
                 <td>{{$customer->address}}</td>
-                <td><a href="{{action('CustomersController@edit',$customer->id)}}" class="btn btn-primary">Edit</a></td>
                 <td>
-                    <form action="{{action('CustomersController@destroy', $customer->id)}}" method="customer">
+          
+                    <div class="btn-group" role="group" aria-label="Basic example">
+ <a href="{{action('CustomersController@edit',$customer->id)}}" class="pull-left btn btn-primary btn-sm"><i class="fa fa-edit"></i></a>
+ &nbsp;
+<form action="{{action('CustomersController@destroy', $customer->id)}}" method="customer">
                     {{csrf_field()}}
                     <input name="_method" type="hidden" value="DELETE">
-                    <button class="btn btn-danger" type="submit">Delete</button>
+                    <button class="btn btn-danger btn-sm" type="submit"><i class="fa fa-remove"></i></button>
                     </form>
+</div>
                 </td>
             </tr>
             @endforeach
