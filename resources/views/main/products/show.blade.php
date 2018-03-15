@@ -9,60 +9,22 @@
 
             <div class="pull-left">
 
-                <h2> Show Product</h2>
+                <h2>Product Details</h2>
 
             </div>
 
-            <div class="pull-right">
+         <div class="jumbotron jumbotron-fluid text-center">
+  <div class="container">
+    
+    <img style="width: 200px; height: 200px;" class="img-responsive" src="/storage/images/{{$product->image}}">
 
-                <a class="btn btn-primary" href="{{ route('products.index') }}"> Back</a>
+    <h1 class="display-4">{{ $product->name }}</h1>
 
-            </div>
+    <p class="lead">{{ $product->description }}</p>
 
-        </div>
-
-    </div>
-
-
-    <div class="row">
-
-        <div class="col-xs-12 col-sm-12 col-md-12">
-
-            <div class="form-group">
-
-                <strong>Name:</strong>
-
-                {{ $product->name }}
-
-            </div>
-
-        </div>
-
-        <div class="col-xs-12 col-sm-12 col-md-12">
-
-            <div class="form-group">
-
-                <strong>Descriptions:</strong>
-
-                {{ $product->description }}
-
-            </div>
-
-        </div>
-
-
-        <div class="col-xs-12 col-sm-12 col-md-12">
-
-            <div class="form-group">
-
-                <strong>Image:</strong>
-
-                <img style="width: 150px; height: 90px;" class="img-responsive" src="/storage/images/{{$product->image}}">
-
-            </div>
-
-        </div>
-
-    </div>
+    <a class="btn btn-primary" href="{{ route('products.index') }}"> Back</a>
+  </div>
+</div>
 
 @endsection
+
