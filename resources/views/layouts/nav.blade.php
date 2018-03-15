@@ -26,6 +26,11 @@
           </form>
         </li>
         <li class="nav-item">
+        <a href="javascript:void();" class="nav-link"> {{Auth::user()->name}}
+      </a>
+        </li>
+
+         <li class="nav-item">
               <a href="{{ url('/logout') }}" class="nav-link"
           onclick="event.preventDefault();
                    document.getElementById('logout-form').submit();">
