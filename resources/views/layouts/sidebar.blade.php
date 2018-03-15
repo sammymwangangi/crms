@@ -27,7 +27,7 @@
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Transactions">
-          <a class="nav-link" href="{{url('main/transactions')}}">
+          <a class="nav-link" href="{{url('transaction/')}}">
             <i class="fa fa-fw fa-money"></i>
             <span class="nav-link-text">Transactions</span>
           </a>
@@ -55,7 +55,7 @@
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Transactions">
-          <a class="nav-link" href="{{url('main/transactions')}}">
+          <a class="nav-link" href="{{url('transaction/')}}">
             <i class="fa fa-fw fa-money"></i>
             <span class="nav-link-text">Transactions</span>
           </a>
@@ -96,7 +96,7 @@
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Transactions">
-          <a class="nav-link" href="{{url('main/transactions')}}">
+          <a class="nav-link" href="{{url('transaction/')}}">
             <i class="fa fa-fw fa-money"></i>
             <span class="nav-link-text">Transactions</span>
           </a>

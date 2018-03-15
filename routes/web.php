@@ -29,4 +29,8 @@ Route::prefix('main')->middleware('auth')->group(function(){
 	Route::resource('products','ProductController');
 
 });
+Route::prefix('transaction')->middleware('auth')->group(function(){
+	Route::get('/','TransactionController@index');
+
+});
 
