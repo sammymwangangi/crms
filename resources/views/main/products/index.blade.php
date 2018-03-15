@@ -1,5 +1,10 @@
 @extends('layouts.master')
-
+@section('crumbs')
+ <li class="breadcrumb-item">
+          <a href="#">Dashboard</a>
+        </li>
+        <li class="breadcrumb-item active">Products</li>
+@endsection
 
 @section('content')
 
