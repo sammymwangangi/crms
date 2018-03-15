@@ -161,46 +161,22 @@ if ($request->hasFile('image')) {
 
      */
 
-    public function update(Request $request, Product $id)
+    public function update(Request $request, Product $product)
 
     {
 
-         request()->validate([
+   
 
-            'name' => 'required',
+         $product= Product::find($product);
 
-            'description' => 'required',
-
-             'image' => 'required|nullable|max:1999'
-
-        ]);
-
-         // File Upload
-        if($request->hasFile('image')){
-            // Get filename with the extension
-            $filenameWithExt = $request->file('image')->getClientOriginalName();
-            // Get just filename
-            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
-            //Get just ext
-            $extension = $request->file('image')->getClientOriginalExtension();
-            // Filename to store
-            $fileNameToStore = $filename.'_'.time().'.'.$extension;
-            // Upload Image
-            $path = $request->file('image')->storeAs('public/images', $fileNameToStore);
-
-        } else {
-            $fileNameToStore = 'noimage.jpg';
+        $product->create(array_merge($request->all()));
+        dd($product);
+        if ($request->hasFile('image')) {
+              $file=$request->file('image');
+                $fileName= time().'.'.$file->getClientOriginalExtension();
+                $request->image->move('images/products/',$fileName);
+                $product->update(['image' => $fileName]);
         }
-
-
-        // Create Product
-        $product = Product::find($id);
-        $product->name = $request->input('name');
-        $product->description = $request->input('description');
-        if($request->hasFile('image')){
-            $product->image = $fileNameToStore;
-        }
-        $product->save();
 
 
         return redirect('main/products')
