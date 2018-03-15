@@ -62,7 +62,7 @@ class ProductController extends Controller
 
             'description' => 'required',
 
-            'image' => 'required',
+            'image' => 'required|nullable|max:1999'
 
         ]);
 
@@ -154,7 +154,7 @@ class ProductController extends Controller
 
      */
 
-    public function update(Request $request, Product $product)
+    public function update(Request $request, Product $id)
 
     {
 
@@ -164,12 +164,36 @@ class ProductController extends Controller
 
             'description' => 'required',
 
-            'image' => 'required',
+             'image' => 'required|nullable|max:1999'
 
         ]);
 
+         // File Upload
+        if($request->hasFile('image')){
+            // Get filename with the extension
+            $filenameWithExt = $request->file('image')->getClientOriginalName();
+            // Get just filename
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+            //Get just ext
+            $extension = $request->file('image')->getClientOriginalExtension();
+            // Filename to store
+            $fileNameToStore = $filename.'_'.time().'.'.$extension;
+            // Upload Image
+            $path = $request->file('image')->storeAs('public/images', $fileNameToStore);
 
-        $product->update($request->all());
+        } else {
+            $fileNameToStore = 'noimage.jpg';
+        }
+
+
+        // Create Product
+        $product = Product::find($id);
+        $product->name = $request->input('name');
+        $product->description = $request->input('description');
+        if($request->hasFile('image')){
+            $product->image = $fileNameToStore;
+        }
+        $product->save();
 
 
         return redirect('main/products')
