@@ -48,5 +48,48 @@ class StaffController extends Controller
         return redirect('main/staffs')
                 ->with('success', 'Staff created');
 
-            }
+    }
+
+    public function edit($id)
+    {
+        $staff = Staff::find($id);
+        return view('main.staffs.edit')->with('staff', $staff);
+    }
+
+
+    public function update(Request $request, $staff)
+    {
+        $this->validate($request, [
+            'name' => 'required',
+            'empno' => 'required',
+            'empdate' => 'required',
+            'email' => 'required',
+            'phone' => 'required',
+            
+            
+
+        ]);
+
+        // Update Post
+        $staff = Staff::find($staff);
+        $staff->name = $request->input('name');
+        $staff->empno = $request->input('empno');
+        $staff->empdate = $request->input('empdate');
+        $staff->email = $request->input('email');
+        $staff->phone = $request->input('phone');
+        $staff->save();
+
+        return redirect('main/staffs')->with('success', 'Staff Updated');
+    }
+
+
+    public function destroy($id)
+    {
+        $staff = Staff::find($id);
+        $staff->delete();
+
+        return redirect('main/staffs')->with('success', 'Staff Removed');
+    }
+
+
 }

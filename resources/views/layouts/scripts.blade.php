@@ -11,12 +11,7 @@
         <!-- Toastr-->
     <script src="{{asset('js/bootstrap-datepicker.min.js')}}"></script>
     <script src="{{asset('js/toastr.min.js')}}"></script>
-    <script src="{{asset('js/gijgo.min.js')}}"></script>
-    <script>
-        $('#datepicker').datepicker({
-            uiLibrary: 'bootstrap4'
-        });
-    </script>
+   
     <script>
       $('#datepicker').datepicker({
             keyboardNavigation: false,

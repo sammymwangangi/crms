@@ -47,8 +47,10 @@
                     <div class="btn-group" role="group" aria-label="Basic example">
  <a href="{{action('CustomersController@edit',$customer->id)}}" class="pull-left btn btn-primary btn-sm"><i class="fa fa-edit"></i></a>
  &nbsp;
-<form action="{{action('CustomersController@destroy', $customer->id)}}" method="customer">
-                    {{csrf_field()}}
+<form action="{{action('CustomersController@destroy', $customer->id)}}" method="POST">
+                    @csrf
+
+                    @method('DELETE')
                     <input name="_method" type="hidden" value="DELETE">
                     <button class="btn btn-danger btn-sm" type="submit"><i class="fa fa-remove"></i></button>
                     </form>

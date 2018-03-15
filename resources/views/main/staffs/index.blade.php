@@ -66,7 +66,7 @@
 
                                                 <strong>Emp_Date:</strong>
 
-                                                <input type="text" name="empdate" class="form-control" placeholder="Employment Date" id="datepicker" width="276">
+                                                <input type="text" name="empdate" class="form-control" id="datepicker" placeholder="Y-m-d" width="276">
                                             </div>
 
                                         </div>
@@ -147,8 +147,10 @@
                     <div class="btn-group" role="group" aria-label="Basic example">
  <a href="{{action('StaffController@edit',$staff->id)}}" class="pull-left btn btn-primary btn-sm"><i class="fa fa-edit"></i></a>
  &nbsp;
-<form action="{{action('StaffController@destroy', $staff->id)}}" method="staff">
-                    {{csrf_field()}}
+<form action="{{action('StaffController@destroy', $staff->id)}}" method="POST">
+                    @csrf
+
+                    @method('DELETE')
                     <input name="_method" type="hidden" value="DELETE">
                     <button class="btn btn-danger btn-sm" type="submit"><i class="fa fa-remove"></i></button>
                     </form>
