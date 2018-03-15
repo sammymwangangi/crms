@@ -62,7 +62,7 @@ class ProductController extends Controller
 
             'description' => 'required',
 
-            'image' => 'required',
+            'image' => 'required|nullable|max:1999'
 
         ]);
 $product = Product::create(array_merge($request->all()));
@@ -165,18 +165,18 @@ if ($request->hasFile('image')) {
 
     {
 
-         request()->validate([
+   
 
-            'name' => 'required',
+         $product= Product::find($product);
 
-            'description' => 'required',
-
-            'image' => 'required',
-
-        ]);
-
-
-        $product->update($request->all());
+        $product->create(array_merge($request->all()));
+        dd($product);
+        if ($request->hasFile('image')) {
+              $file=$request->file('image');
+                $fileName= time().'.'.$file->getClientOriginalExtension();
+                $request->image->move('images/products/',$fileName);
+                $product->update(['image' => $fileName]);
+        }
 
 
         return redirect('main/products')
