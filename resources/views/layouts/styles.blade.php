@@ -6,3 +6,5 @@
   <!-- Custom styles for this template-->
   <link href="{{asset('css/sb-admin.css')}}" rel="stylesheet">
   <link href="{{asset('css/toastr.min.css')}}" rel="stylesheet">
+  <link href="{{asset('css/gijgo.min.css')}}" rel="stylesheet">
+  

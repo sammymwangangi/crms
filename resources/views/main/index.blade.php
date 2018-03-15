@@ -16,7 +16,7 @@
               </div>
               <div class="mr-5">11 Staff Members!</div>
             </div>
-            <a class="card-footer text-white clearfix small z-1" href="{{url('main/staff')}}">
+            <a class="card-footer text-white clearfix small z-1" href="{{url('main/staffs')}}">
               <span class="float-left">View Details</span>
               <span class="float-right">
                 <i class="fa fa-angle-right"></i>

@@ -6,7 +6,7 @@
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Staff">
-          <a class="nav-link" href="{{url('main/staff')}}">
+          <a class="nav-link" href="{{url('main/staffs')}}">
             <i class="fa fa-fw fa-group"></i>
             <span class="nav-link-text">Staff</span>
           </a>

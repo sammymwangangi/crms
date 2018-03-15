@@ -1,9 +1,12 @@
 @extends('layouts.master')
 @section('crumbs')
  <li class="breadcrumb-item">
-          <a href="#">Dashboard</a>
+          <a href="{{url('/main')}}">Dashboard</a>
         </li>
-        <li class="breadcrumb-item active">Products</li>
+        <li class="breadcrumb-item">
+          <a href="{{url('/main/products')}}">Products</a>
+        </li>
+        <li class="breadcrumb-item active">Edit Products</li>
 @endsection
 
 @section('content')

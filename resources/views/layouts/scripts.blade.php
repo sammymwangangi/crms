@@ -10,6 +10,12 @@
     <script src="{{asset('js/sb-admin-datatables.min.js')}}"></script>
         <!-- Toastr-->
     <script src="{{asset('js/toastr.min.js')}}"></script>
+    <script src="{{asset('js/gijgo.min.js')}}"></script>
+    <script>
+        $('#datepicker').datepicker({
+            uiLibrary: 'bootstrap4'
+        });
+    </script>
     <script>
   @if(Session::has('success'))
   toastr.success("{{ Session::get('success') }}");

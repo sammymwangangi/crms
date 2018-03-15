@@ -161,7 +161,7 @@ if ($request->hasFile('image')) {
 
      */
 
-    public function update(Request $request, Product $product)
+    public function update(Request $request, $product)
 
     {
 
@@ -170,7 +170,6 @@ if ($request->hasFile('image')) {
          $product= Product::find($product);
 
         $product->create(array_merge($request->all()));
-        dd($product);
         if ($request->hasFile('image')) {
               $file=$request->file('image');
                 $fileName= time().'.'.$file->getClientOriginalExtension();

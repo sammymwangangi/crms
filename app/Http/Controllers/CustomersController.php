@@ -96,7 +96,7 @@ class CustomersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $customer)
     {
         $this->validate($request, [
             'name' => 'required',
@@ -108,7 +108,7 @@ class CustomersController extends Controller
         ]);
 
         // Update Post
-        $customer = Customer::find($id);
+        $customer = Customer::find($customer);
         $customer->name = $request->input('name');
         $customer->email = $request->input('email');
         $customer->phone = $request->input('phone');

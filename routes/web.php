@@ -28,5 +28,9 @@ Route::prefix('main')->middleware('auth')->group(function(){
 
 	Route::resource('products','ProductController');
 
+	Route::resource('staffs','StaffController');
+
+	
+
 });
 
