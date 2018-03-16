@@ -66,7 +66,7 @@
 
             <td>{{ $product->description }}</td>
 
-            <td>{{ $product->image }}</td>
+            <td><img style="width: 150px; height: 90px;" class="img-responsive" src="{{asset('images/products/'.$product->image)}}"></td>
 
             <td>
 

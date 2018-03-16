@@ -14,9 +14,9 @@
               <div class="card-body-icon">
                 <i class="fa fa-fw fa-group"></i>
               </div>
-              <div class="mr-5">11 Staff Members!</div>
+              <div class="mr-5"><span class="badge badge-light">{{$staff_count}}</span> Staff Members!</div>
             </div>
-            <a class="card-footer text-white clearfix small z-1" href="{{url('main/staff')}}">
+            <a class="card-footer text-white clearfix small z-1" href="{{url('main/staffs')}}">
               <span class="float-left">View Details</span>
               <span class="float-right">
                 <i class="fa fa-angle-right"></i>
@@ -30,7 +30,7 @@
               <div class="card-body-icon">
                 <i class="fa fa-fw fa-users"></i>
               </div>
-              <div class="mr-5">{{$customers_count}} Customers!</div>
+              <div class="mr-5"><span class="badge badge-light">{{$customers_count}}</span> Customers!</div>
             </div>
             <a class="card-footer text-white clearfix small z-1" href="{{url('main/customers')}}">
               <span class="float-left">View Details</span>
@@ -46,7 +46,7 @@
               <div class="card-body-icon">
                 <i class="fa fa-fw fa-shopping-bag"></i>
               </div>
-              <div class="mr-5">{{$products_count}} Products!</div>
+              <div class="mr-5"><span class="badge badge-light">{{$products_count}}</span> Products!</div>
             </div>
             <a class="card-footer text-white clearfix small z-1" href="{{url('main/products')}}">
               <span class="float-left">View Details</span>
@@ -62,7 +62,7 @@
               <div class="card-body-icon">
                 <i class="fa fa-fw fa-money"></i>
               </div>
-              <div class="mr-5">13 New Transactios!</div>
+              <div class="mr-5"><span class="badge badge-light">{{$transactions_count}}</span> New Transactions!</div>
             </div>
             <a class="card-footer text-white clearfix small z-1" href="{{url('main/transactions')}}">
               <span class="float-left">View Details</span>

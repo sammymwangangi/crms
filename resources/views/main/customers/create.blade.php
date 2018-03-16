@@ -64,7 +64,7 @@
                 <div class="form-group">
 
                     <strong>Name:</strong>
-
+                    
                     <input type="text" name="name" class="form-control" placeholder="Name">
 
                 </div>
